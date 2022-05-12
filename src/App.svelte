@@ -1,6 +1,6 @@
 <script lang="ts">
 	import categorie from "./servizio/categorie"; 
-import ListaCategorie from "./comps/lista-categorie.svelte";
+	import ListaCategorie from "./comps/lista-categorie.svelte";
 
 	export let name: string;
 </script>

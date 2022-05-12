@@ -4,7 +4,7 @@ import type Categoria from '../interfacce/categoria';
 
     import Categorie from '../servizio/categorie'
 
-    let cat: Writable<Categoria[]> = Categorie.data
+    let cat = Categorie.data as Writable<Categoria[]>;
 </script>
 
 {#each $cat as categoria}
