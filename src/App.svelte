@@ -1,6 +1,7 @@
 <script lang="ts">
 	import categorie from "./servizio/categorie"; 
-	import ListaCategorie from "./comps/lista-categorie.svelte";
+	import ListaCategorie from "./comps/categorie/lista-categorie.svelte";
+	import AggCategoria from "./comps/categorie/agg-categoria.svelte";
 
 	export let name: string;
 </script>
@@ -8,7 +9,9 @@
 <main>
 	<h1>Hello {name}!</h1>
 	<ListaCategorie></ListaCategorie>
-	<button on:click={() => {categorie.agg()}}>Click</button>
+	<hr>
+	<AggCategoria></AggCategoria>
+	<hr>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 

@@ -7,5 +7,5 @@ export default interface Categoria {
     titolo: string;
     parente: null | CategoriaId_T;
     stima: Ammonta; 
-    creato: Date;
+    creato: number;
 }

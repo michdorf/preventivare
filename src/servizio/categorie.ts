@@ -7,14 +7,7 @@ class Categorie extends Salvabile implements SalvabileServizio {
         super('preventivare', 'categorie');
     }
 
-    agg() {
-        const c: Categoria = {
-            id: uuid(),
-            titolo: 'Test',
-            parente: null,
-            stima: '22:eur',
-            creato: new Date()
-        };
+    agg(c: Categoria) {
         super.agg(c);
     }
 }
