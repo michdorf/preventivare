@@ -1,15 +1,18 @@
 <script lang="ts">
-	import ListaCategorie from "./comps/categorie/lista-categorie.svelte";
-	import AggCategoria from "./comps/categorie/agg-categoria.svelte";
-	import AggSpesa from "./comps/spese/agg-spesa.svelte";
+import { get } from 'svelte/store'
+import ListaCategorie from "./comps/categorie/lista-categorie.svelte";
+import AggCategoria from "./comps/categorie/agg-categoria.svelte";
+import AggSpesa from "./comps/spese/agg-spesa.svelte";
+import categorie from "./servizio/categorie";
 
-	export let name: string;
-	let curCategoria = "";
+export let name: string;
+let curCatId = "";
+$: curCategoria = get(categorie.data).find(c => c.id === curCatId);
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<ListaCategorie on:select={catId => {curCategoria = catId.detail}}></ListaCategorie>
+	<ListaCategorie on:select={catId => {curCatId = catId.detail}}></ListaCategorie>
 	<hr>
 	<AggCategoria></AggCategoria>
 	<hr>
