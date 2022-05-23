@@ -1,16 +1,21 @@
 <script lang="ts">
-	import categorie from "./servizio/categorie"; 
 	import ListaCategorie from "./comps/categorie/lista-categorie.svelte";
 	import AggCategoria from "./comps/categorie/agg-categoria.svelte";
+	import AggSpesa from "./comps/spese/agg-spesa.svelte";
 
 	export let name: string;
+	let curCategoria = "";
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<ListaCategorie></ListaCategorie>
+	<ListaCategorie on:select={catId => {curCategoria = catId.detail}}></ListaCategorie>
 	<hr>
 	<AggCategoria></AggCategoria>
+	<hr>
+	{#if curCategoria}
+		<AggSpesa categoria={curCategoria}></AggSpesa>
+	{/if}
 	<hr>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
