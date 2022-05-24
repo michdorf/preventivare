@@ -7,6 +7,7 @@ import categorie from "../../servizio/categorie";
 
 let dispatch = createEventDispatcher<{change: Categoria}>();
 export let nascCategoria: string = "";
+export let curCategoria: Categoria = null;
 let idSelezionato = '';
     
 let c = derived(categorie.data as Writable<Categoria[]>, value => {
@@ -20,11 +21,11 @@ function onChange(e: Event) {
 }
 </script>
 
-<select on:change={onChange}>
+<select on:change={onChange} value={curCategoria ? curCategoria.id : ''}>
     <optgroup label="Vælg en overkategori">
         {#each $c as categoria}
             <option value={categoria.id}>{categoria.titolo}</option>
         {/each}
-        <option value="" selected>Ingen</option>
+        <option value="">Ingen</option>
     </optgroup>
 </select>

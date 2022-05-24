@@ -29,7 +29,7 @@ $: {
 
 <h1>Tilføj udgift til {categoria.titolo}</h1>
 <input bind:value={spesa.titolo}/><br>
-<CategoriaSelect on:change={(e) => spesa.categoria = e.detail}></CategoriaSelect>{spesa.categoria.titolo}<br>
+<CategoriaSelect curCategoria={spesa.categoria} on:change={(e) => spesa.categoria = e.detail}></CategoriaSelect>{spesa.categoria.titolo}<br>
 <input bind:value={spesa.etichette} placeholder="Etichette"/><br>
 <textarea bind:value={spesa.commento} placeholder="Commento"></textarea><br>
 <AmmontaSelect bind:value={spesa.ammonta}></AmmontaSelect><br>
