@@ -1,5 +1,4 @@
 import Salvabile, { type SalvabileServizio } from '../../moduli/moduli/salvabile'
-import uuid from '../../moduli/memo/uuid'
 import type Categoria from '../interfacce/categoria'
 import type { Writable } from 'svelte/store';
 

@@ -1,6 +1,7 @@
 <script lang="ts">
 import { get } from 'svelte/store'
 import ListaCategorie from "./comps/categorie/lista-categorie.svelte";
+import ListaSpese from './comps/spese/lista-spese.svelte';
 import AggCategoria from "./comps/categorie/agg-categoria.svelte";
 import AggSpesa from "./comps/spese/agg-spesa.svelte";
 import categorie from "./servizio/categorie";
@@ -19,6 +20,8 @@ $: curCategoria = get(categorie.data).find(c => c.id === curCatId);
 	{#if curCategoria}
 		<AggSpesa categoria={curCategoria}></AggSpesa>
 	{/if}
+	<hr>
+	<ListaSpese></ListaSpese>
 	<hr>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>

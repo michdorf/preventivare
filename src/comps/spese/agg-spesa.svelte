@@ -1,6 +1,6 @@
 <script lang="ts">
-import { derived } from "svelte/store";
 import uuid from "../../../moduli/memo/uuid";
+import Spese from '../../servizio/spese';
 import type Categoria from "../../interfacce/categoria";
 import type Spesa from "../../interfacce/spesa";
 import AmmontaSelect from "../ammonta-select.svelte";
@@ -25,6 +25,10 @@ let dataInput = spesa.data.toISOString().split('T')[0];
 $: {
     spesa.data = new Date(dataInput);
 }
+
+function salva() {
+    Spese.agg(spesa);
+}
 </script>
 
 <h1>Tilføj udgift til {categoria.titolo}</h1>
@@ -35,3 +39,4 @@ $: {
 <AmmontaSelect bind:value={spesa.ammonta}></AmmontaSelect><br>
 <label for='pagato'>Pagato?</label><input id="pagato" type="checkbox"/><br>
 <input bind:value={dataInput} type="date" placeholder="Data"/><br>
+<button on:click={salva}>Salva</button>
