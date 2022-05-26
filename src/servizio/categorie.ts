@@ -12,6 +12,7 @@ class Categorie extends Salvabile implements SalvabileServizio {
     }
 
     agg(c: Categoria) {
+        console.info(`Aggiungo categoria:`, c);
         super.agg(c);
     }
 }

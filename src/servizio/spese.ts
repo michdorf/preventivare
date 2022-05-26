@@ -12,6 +12,7 @@ class Spese extends Salvabile implements SalvabileServizio {
     }
 
     agg(s: Spesa) {
+        console.info(`Aggiungo spesa:`, s);
         super.agg(s);
     }
 }
