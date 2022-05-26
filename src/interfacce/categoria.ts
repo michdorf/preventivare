@@ -1,4 +1,4 @@
-import type Ammonta from "./ammonta";
+import type Ammonta from "../ts/ammonta";
 
 type CategoriaId_T = string;
 

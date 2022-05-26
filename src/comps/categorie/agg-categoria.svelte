@@ -1,6 +1,5 @@
 <script lang="ts">
 import uuid from "../../../moduli/memo/uuid";
-import type Ammonta from "../../interfacce/ammonta";
 
 import type Categoria from "../../interfacce/categoria";
 import categorie from "../../servizio/categorie";

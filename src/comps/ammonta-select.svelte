@@ -1,17 +1,16 @@
 <script lang="ts">
 import { createEventDispatcher } from "svelte";
-import type Ammonta from "../interfacce/ammonta";
+import type { default as Ammonta, Valuta } from "../ts/ammonta";
+import { toAmmonta } from "../ts/ammonta";
 import ValutaSelect from "./valuta-select.svelte";
 
-let dispatcher = createEventDispatcher<{change: Ammonta}>();
-
 let stima = 0;
-export let valuta = 'dkk';
+export let valuta: Valuta = 'dkk';
 const input = stima + ':' + valuta as Ammonta;
 
 export let value = input;
 $: {
-    value = stima + valuta as Ammonta;
+    value = toAmmonta(stima, valuta);
 }
 </script>
 

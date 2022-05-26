@@ -1,7 +1,7 @@
 <script lang="ts">
 import type { Writable } from 'svelte/store';
 import type Categoria from '../../interfacce/categoria';
-import format from '../../ts/ammonta-formatter';
+import { format } from '../../ts/ammonta';
 import Categorie from '../../servizio/categorie'
 import { createEventDispatcher } from 'svelte';
 

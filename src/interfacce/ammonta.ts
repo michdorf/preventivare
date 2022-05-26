@@ -1,5 +1,1 @@
-type Valuta = 'dkk' | 'eur';
-
-type Ammonta = `${number}:${Valuta}`;
-
-export default Ammonta;
+export { type default as Ammonta } from '../ts/ammonta';

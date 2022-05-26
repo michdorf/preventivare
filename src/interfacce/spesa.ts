@@ -1,4 +1,4 @@
-import type Ammonta from "./ammonta";
+import type Ammonta from "../ts/ammonta";
 import type Categoria from "./categoria";
 import type Ricorrente from '../../moduli/moduli/ricorrente';
 
